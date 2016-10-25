@@ -1,0 +1,39 @@
+body {
+	background-color:#f4f3e9;
+
+}
+
+#intro {
+	margin:auto;
+	text-align:center;
+}
+
+#user-area {
+	background-color:white;
+}
+
+
+.container {
+	margin:50px;
+	
+}
+
+
+#response-string {
+	margin-left:100px;
+	
+}
+
+
+.repositories {
+	display:inline-block;
+	float:right;
+	/*margin-left:150px;*/
+	/*background-color:green;*/
+}
+
+#languages {
+	display:inline-block;
+	float:left;
+	border:1px solid blue; 
+}
