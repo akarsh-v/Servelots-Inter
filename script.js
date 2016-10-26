@@ -53,25 +53,27 @@ sendButton.onclick=function(){
    //Testing the responseText 
    console.log(responseStr);
    
-   for(var i=0;i<responseStr.items.length;i++)
+   /*for(var i=0;i<responseStr.items.length;i++)
    {
     
     console.log(responseStr.items[i]);
-   }
+   }*/
 
   }
 
 
-
+ var url = 'https://api.github.com/search/repositories?q='+input+'&sort=stars&order=desc'
+ var urlWithLanguage='https://api.github.com/search/repositories?q='+input+'+language:'+languageInput+'&sort=stars&order=desc'
  var request = new XMLHttpRequest();
  // Set the event handler
  request.onload = dumpResponse;
  // Initialize the request
- if(typeof languageInput==='undefined' || languageInput===null){ 
-  request.open('get', 'https://api.github.com/search/repositories?q='+input+'&sort=stars&order=desc',  true);
+ console.log(languageInput, typeof(languageInput), "input-field");
+ if(languageInput===""){ 
+  request.open('get', url,  true);
  }
  else{
-  request.open('get', 'https://api.github.com/search/repositories?q='+input+'+language:'+languageInput+'&sort=stars&order=desc',  true);
+  request.open('get',urlWithLanguage ,  true);
  }
  // Fire away!
  request.send();
